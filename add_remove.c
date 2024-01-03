@@ -7,7 +7,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (argument) /*si y'a un argument, verifie que c'est bien des chiffres*/
 	{
-		while (argument[i] != "\0")
+		while (argument[i] != '\0')
 		{
 			if (argument[i] < 48 || argument[i] > 57)
 			{
@@ -38,6 +38,6 @@ void push(stack_t **stack, unsigned int line_number)
 	*stack = new_node;
 }
 
-void pop(stack_t **stack, unsigned int line_number)
+void pop(__attribute__((unused)) stack_t **stack,__attribute__((unused)) unsigned int line_number)
 {
 }
