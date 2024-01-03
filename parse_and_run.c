@@ -1,4 +1,5 @@
 #include "header.h"
+char *argument;
 
 int parse_and_run(char *content, FILE *file, stack_t **stack, unsigned int line_number)
 {
@@ -16,10 +17,10 @@ int parse_and_run(char *content, FILE *file, stack_t **stack, unsigned int line_
 	char *token;
 	int i = 0;
 
-	token = strtok(content, " \n\t");  /*store le token de la fonction( ex push)*/
+	token = strtok(content, " \n\t$");  /*store le token de la fonction( ex push)*/
 	if (!token)
 		return (1);
-	argument = strtok(NULL, " \n\t"); /* store ce qu'il y a juste apres (ex 1) dans la variable globale*/
+	argument = strtok(NULL, " \n\t$"); /* store ce qu'il y a juste apres (ex 1) dans la variable globale*/
 	while (opcodes[i].opcode != NULL)
 	{
 		if (strcmp(token, opcodes[i].opcode) == 0)

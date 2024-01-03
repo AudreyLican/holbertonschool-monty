@@ -13,6 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 			{
 				isint = 1;
 			}
+			i++;
 		}
 	}
 	if (!argument || isint == 1) /*si y'a pas que des chiffre, ou pas d'argument*/
