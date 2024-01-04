@@ -5,7 +5,9 @@
  * Return: itself with it's data
  */
 
-GlobalMonty *getGlobalMonty() {
+GlobalMonty *getGlobalMonty()
+{
 	static GlobalMonty Monty = {0};
-	return &Monty;
+
+	return (&Monty);
 }

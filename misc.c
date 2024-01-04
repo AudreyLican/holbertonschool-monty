@@ -30,8 +30,6 @@ void freeStack(stack_t **stack)
 /**
  * free_all_close_file - free everything and close the file
  * @content: line buffer to free
- * @token: token to free
- * @argument: arguments to free
  * @stack: stack to free
  * @file: file to close
  */
