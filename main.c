@@ -42,6 +42,6 @@ int main(int argc, char *argv[])
 		}
 		free(lineBuffer);
 	}
-	free_all_close_file(lineBuffer, NULL, argument, stack, file);
+	free_all_close_file(lineBuffer, NULL, argument, &stack, file);
 	return (0);
 }
