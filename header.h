@@ -37,7 +37,8 @@ typedef struct instruction_s
 
 extern char *argument;
 
-int parse_and_run(char *content, FILE *file, stack_t **stack, unsigned int line_number);
+int parse_and_run(char *content, FILE *file,
+stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);

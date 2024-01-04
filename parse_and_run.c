@@ -5,9 +5,10 @@ char *argument;
  * parse_and_run - find the right function (if any) associated
  * to the command from the file and execute it.
  * @content: line from the file to check
- * @file: file where commands are written 
+ * @file: file where commands are written
  * @stack: stack where to push the element
  * @line_number: line number that is analyzed
+ * Return (0) on success
  */
 
 int parse_and_run(char *content, FILE *file,
