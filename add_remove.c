@@ -1,5 +1,11 @@
 #include "header.h"
 
+/**
+ * push - push an element to the stack
+ * @stack: stack where to push the element
+ * @line_number: line where this push is called
+ */
+
 void push(stack_t **stack, unsigned int line_number)
 {
 	int i = 0, isint = 0, arg_number;
@@ -39,6 +45,13 @@ void push(stack_t **stack, unsigned int line_number)
 	*stack = new_node;
 }
 
-void pop(__attribute__((unused)) stack_t **stack,__attribute__((unused)) unsigned int line_number)
+/**
+ * pop - removes the top element of the stack
+ * @stack: stack where to push the element
+ * @line_number: line where this pop is called
+ */
+
+void pop(__attribute__((unused)) stack_t **stack,
+__attribute__((unused)) unsigned int line_number)
 {
 }

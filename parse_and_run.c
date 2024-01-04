@@ -1,7 +1,17 @@
 #include "header.h"
 char *argument;
 
-int parse_and_run(char *content, FILE *file, stack_t **stack, unsigned int line_number)
+/**
+ * parse_and_run - find the right function (if any) associated
+ * to the command from the file and execute it.
+ * @content: line from the file to check
+ * @file: file where commands are written 
+ * @stack: stack where to push the element
+ * @line_number: line number that is analyzed
+ */
+
+int parse_and_run(char *content, FILE *file,
+stack_t **stack, unsigned int line_number)
 {
 	instruction_t opcodes[] = {
 		{"push", push},
@@ -17,15 +27,15 @@ int parse_and_run(char *content, FILE *file, stack_t **stack, unsigned int line_
 	char *token;
 	int i = 0;
 
-	token = strtok(content, " \n\t$");  /*store le token de la fonction( ex push)*/
+	token = strtok(content, " \n\t$");
 	if (!token)
 		return (1);
-	argument = strtok(NULL, " \n\t$"); /* store ce qu'il y a juste apres (ex 1) dans la variable globale*/
+	argument = strtok(NULL, " \n\t$");
 	while (opcodes[i].opcode != NULL)
 	{
 		if (strcmp(token, opcodes[i].opcode) == 0)
 		{
-			opcodes[i].f(stack, line_number); /*argument sera passé par la variable globale*/
+			opcodes[i].f(stack, line_number);
 			return (0);
 		}
 		i++;

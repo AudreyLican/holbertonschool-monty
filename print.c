@@ -1,5 +1,10 @@
 #include "header.h"
 
+/**
+ * pall - print all values on the stack,starting from the top
+ * @stack: stack where to push the element
+ * @line_number: line where this pall is called
+ */
 void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *cursor;
@@ -13,7 +18,14 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 		cursor = cursor->next;
 	}
 }
-void pint(__attribute__((unused)) stack_t **stack, __attribute__((unused)) unsigned int line_number)
+
+/**
+ * pint - prints the value at the top of the stack,follow by a new line
+ * @stack: stack where to push the element
+ * @line_number: line where this push is called
+ */
+void pint(__attribute__((unused)) stack_t **stack,
+__attribute__((unused)) unsigned int line_number)
 {
 
 }
