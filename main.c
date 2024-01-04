@@ -1,6 +1,6 @@
 #include "monty.h"
-	FILE *openFile;
-	char *lineContent;
+	/*FILE *openFile;
+	char *lineContent;*/
 
 /**
  * main - entry point
@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 0;
 	size_t lineSize = 0;
 	stack_t *stack = NULL;
+	GlobalMonty *Monty = getGlobalMonty();
 
 	if (argc != 2)
 	{
@@ -29,7 +30,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	openFile = file;
+	Monty->openFile = file;
 	while (readStatus > 0)
 	{
 		lineBuffer = NULL;
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
 		line_number++;
 		if (readStatus > 0 && lineBuffer[0] != '#' && lineBuffer[0] != '\n')
 		{
-			lineContent = lineBuffer;
+			Monty->lineContent = lineBuffer;
 			parse_and_run(lineBuffer, file, &stack, line_number);
 		}
 		free(lineBuffer);

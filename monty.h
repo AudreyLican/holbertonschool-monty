@@ -35,9 +35,14 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern char *argument;
-extern FILE *openFile;
-extern char *lineContent;
+typedef struct singleton_monty
+{
+	char *argument;
+	FILE *openFile;
+	char *lineContent;
+} GlobalMonty;
+
+GlobalMonty *getGlobalMonty();
 
 int parse_and_run(char *content, FILE *file,
 stack_t **stack, unsigned int line_number);

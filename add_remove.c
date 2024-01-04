@@ -10,33 +10,34 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	int i = 0, isint = 0, arg_number;
 	stack_t *new_node, *temp_node;
+	GlobalMonty *Monty = getGlobalMonty();
 
-	if (argument)
+	if (Monty->argument)
 	{
-		if (argument[0] == '-')
+		if (Monty->argument[0] == '-')
 			i++;
-		while (argument[i] != '\0')
+		while (Monty->argument[i] != '\0')
 		{
-			if (argument[i] < 48 || argument[i] > 57)
+			if (Monty->argument[i] < 48 || Monty->argument[i] > 57)
 			{
 				isint = 1;
 			}
 			i++;
 		}
 	}
-	if (!argument || isint == 1)
+	if (!Monty->argument || isint == 1)
 	{
 		fprintf(stderr, "L%d: usage: push integer", line_number);
-		free_all_close_file(lineContent, stack, openFile);
+		free_all_close_file(Monty->lineContent, stack, Monty->openFile);
 		exit(EXIT_FAILURE);
 	}
-	arg_number = atoi(argument);
+	arg_number = atoi(Monty->argument);
 	temp_node = *stack;
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error Malloc");
-		free_all_close_file(lineContent, stack, openFile);
+		free_all_close_file(Monty->lineContent, stack, Monty->openFile);
 		exit(EXIT_FAILURE);
 	}
 	if (temp_node)

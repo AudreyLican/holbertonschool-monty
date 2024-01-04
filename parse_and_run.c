@@ -1,5 +1,5 @@
 #include "monty.h"
-char *argument;
+/*char *argument;*/
 
 /**
  * parse_and_run - find the right function (if any) associated
@@ -27,11 +27,12 @@ stack_t **stack, unsigned int line_number)
 	};
 	char *token;
 	int i = 0;
+	GlobalMonty *Monty = getGlobalMonty();
 
 	token = strtok(content, " \n\t$");
 	if (!token)
 		return (1);
-	argument = strtok(NULL, " \n\t$");
+	Monty->argument = strtok(NULL, " \n\t$");
 	while (opcodes[i].opcode != NULL)
 	{
 		if (strcmp(token, opcodes[i].opcode) == 0)
