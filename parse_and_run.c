@@ -1,6 +1,4 @@
 #include "monty.h"
-/*char *argument;*/
-
 /**
  * parse_and_run - find the right function (if any) associated
  * to the command from the file and execute it.

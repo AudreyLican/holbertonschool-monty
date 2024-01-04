@@ -35,6 +35,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct singleton_monty - store data to be used globaly
+ * @argument: argument to use with command(if any)
+ * @openFile: file that was opened
+ * @lineContent: content of the line read from file
+ */
+
 typedef struct singleton_monty
 {
 	char *argument;

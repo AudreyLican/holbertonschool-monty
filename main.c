@@ -1,8 +1,4 @@
 #include "monty.h"
-/**
-*FILE *openFile;
-*char *lineContent;
-*/
 
 /**
  * main - entry point
