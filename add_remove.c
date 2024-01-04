@@ -27,7 +27,7 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	if (!Monty->argument || isint == 1)
 	{
-		fprintf(stderr, "L%d: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_all_close_file(Monty->lineContent, stack, Monty->openFile);
 		exit(EXIT_FAILURE);
 	}
@@ -36,7 +36,7 @@ void push(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		fprintf(stderr, "Error Malloc");
+		fprintf(stderr, "Error Malloc new node\n");
 		free_all_close_file(Monty->lineContent, stack, Monty->openFile);
 		exit(EXIT_FAILURE);
 	}
