@@ -49,7 +49,6 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void freeStack(stack_t **stack);
-void free_all_close_file(char *content, char *token,
-char *argument, stack_t **stack, FILE *file);
+void free_all_close_file(char *content, stack_t **stack, FILE *file);
 
 #endif

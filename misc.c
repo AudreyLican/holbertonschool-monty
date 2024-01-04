@@ -36,14 +36,10 @@ void freeStack(stack_t **stack)
  * @file: file to close
  */
 
-void free_all_close_file(char *content, char *token, char *argument, stack_t **stack, FILE *file)
+void free_all_close_file(char *content, stack_t **stack, FILE *file)
 {
 	if (content)
 		free(content);
-	if (token)
-		free(token);
-	if (argument)
-		free(argument);
 	if (*stack)
 		freeStack(stack);
 	if (file)

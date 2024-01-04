@@ -44,7 +44,7 @@ stack_t **stack, unsigned int line_number)
 	if (opcodes[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
-		free_all_close_file(content, token, argument, stack, file);
+		free_all_close_file(content, stack, file);
 		exit(EXIT_FAILURE);
 	}
 	return (1);

@@ -27,7 +27,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (!argument || isint == 1)
 	{
 		fprintf(stderr, "L%d: usage: push integer", line_number);
-		free_all_close_file(lineContent, NULL, argument, stack, openFile);
+		free_all_close_file(lineContent, stack, openFile);
 		exit(EXIT_FAILURE);
 	}
 	arg_number = atoi(argument);
@@ -36,7 +36,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error Malloc");
-		free_all_close_file(lineContent, NULL, argument, stack, openFile);
+		free_all_close_file(lineContent, stack, openFile);
 		exit(EXIT_FAILURE);
 	}
 	if (temp_node)
