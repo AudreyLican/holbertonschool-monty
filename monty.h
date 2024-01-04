@@ -36,6 +36,8 @@ typedef struct instruction_s
 } instruction_t;
 
 extern char *argument;
+extern FILE *openFile;
+extern char *lineContent;
 
 int parse_and_run(char *content, FILE *file,
 stack_t **stack, unsigned int line_number);
@@ -46,6 +48,8 @@ void add(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
-
+void freeStack(stack_t **stack);
+void free_all_close_file(char *content, char *token,
+char *argument, stack_t **stack, FILE *file);
 
 #endif

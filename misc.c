@@ -9,3 +9,43 @@ void nop(__attribute__((unused)) stack_t **stack,
 __attribute__((unused)) unsigned int line_number)
 {
 }
+
+/**
+ * freeStack - free the stack and it's content
+ * @stack: head of the stack
+ */
+void freeStack(stack_t **stack)
+{
+	stack_t *temp;
+
+	while (*stack != NULL)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+	*stack = NULL;
+}
+
+/**
+ * free_all_close_file - free everything and close the file
+ * @content: line buffer to free
+ * @token: token to free
+ * @argument: arguments to free
+ * @stack: stack to free
+ * @file: file to close
+ */
+
+void free_all_close_file(char *content, char *token, char *argument, stack_t **stack, FILE *file)
+{
+	if (content)
+		free(content);
+	if (token)
+		free(token);
+	if (argument)
+		free(argument);
+	if (*stack)
+		freeStack(stack);
+	if (file)
+		fclose(file);
+}

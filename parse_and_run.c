@@ -8,7 +8,7 @@ char *argument;
  * @file: file where commands are written
  * @stack: stack where to push the element
  * @line_number: line number that is analyzed
- * Return (0) on success
+ * Return: (0) on success
  */
 
 int parse_and_run(char *content, FILE *file,
@@ -44,10 +44,7 @@ stack_t **stack, unsigned int line_number)
 	if (opcodes[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
-		free(content);
-		free(token);
-		free(argument);
-		fclose(file);
+		free_all_close_file(content, token, argument, stack, file);
 		exit(EXIT_FAILURE);
 	}
 	return (1);

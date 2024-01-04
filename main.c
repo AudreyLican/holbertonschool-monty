@@ -1,4 +1,6 @@
 #include "monty.h"
+	FILE *openFile;
+	char *lineContent;
 
 /**
  * main - entry point
@@ -27,17 +29,19 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
+	openFile = file;
 	while (readStatus > 0)
 	{
 		lineBuffer = NULL;
 		readStatus = getline(&lineBuffer, &lineSize, file);
 		line_number++;
-		if (readStatus > 0)
+		if (readStatus > 0 && lineBuffer[0] != '#' && lineBuffer[0] != '\n')
 		{
+			lineContent = lineBuffer;
 			parse_and_run(lineBuffer, file, &stack, line_number);
 		}
 		free(lineBuffer);
 	}
-	fclose(file);
+	free_all_close_file(lineBuffer, NULL, argument, stack, file);
 	return (0);
 }
