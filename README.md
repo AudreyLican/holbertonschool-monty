@@ -1,6 +1,6 @@
 # C - Stacks, Queues - LIFO, FIFO
 
-This project is focused on implementing stacks and queues using LIFO (Last In, First Out) and FIFO (First In, First Out) concepts in C programming. It's an academic project done by Audrey Lican and Nicolas Taillepierre under the guidance of Julien Barbier.
+This project is focused on implementing stacks and queues using LIFO (Last In, First Out) and FIFO (First In, First Out) concepts in C programming. It's an academic project done by Audrey Lican and Nicolas Taillepierre on a project made by Julien Barbier.
 
 ## Description
 
@@ -88,5 +88,5 @@ The program handles various errors like file opening failures, invalid instructi
 
 ## Authors
 
-[Audrey "Luffy" Lican](https://github.com/AudreyLican)
+[Audrey "Luffy" Lican](https://github.com/AudreyLican)\
 [Nicolas Taillepierre](https://github.com/TaillepierreN)
