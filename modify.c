@@ -5,8 +5,7 @@
  * @stack: stack where to push the element
  * @line_number: line where this swap is called
  */
-void swap(__attribute__((unused)) stack_t **stack,
-__attribute__((unused)) unsigned int line_number)
+void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 	GlobalMonty *Monty = getGlobalMonty();
