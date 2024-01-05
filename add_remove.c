@@ -57,4 +57,17 @@ void push(stack_t **stack, unsigned int line_number)
 void pop(__attribute__((unused)) stack_t **stack,
 __attribute__((unused)) unsigned int line_number)
 {
+	stack_t *temp;
+	GlobalMonty *Monty = getGlobalMonty();
+
+	if (!*stack)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+
+		free_all_close_file(Monty->lineContent, stack, Monty->openFile);
+		exit(EXIT_FAILURE);
+	}
+	temp = *stack;
+	*stack = temp->next;
+	free(temp);
 }
