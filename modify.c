@@ -34,9 +34,26 @@ void swap(stack_t **stack, unsigned int line_number)
  * @stack: stack where to push the element
  * @line_number: line where this add is called
  */
-void add(__attribute__((unused)) stack_t **stack,
-		 __attribute__((unused)) unsigned int line_number)
+void add(stack_t **stack, unsigned int line_number)
 {
+	stack_t	*top;
+	int	a = 0, b = 0;
+	GlobalMonty *Monty = getGlobalMonty();
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		free_all_close_file(Monty->lineContent, stack, Monty->openFile);
+		exit(EXIT_FAILURE);
+	}
+
+	top = *stack;
+	a = top->n;
+	b = top->next->n;
+	top->next->n = a + b;
+	*stack = top->next;
+
+	free(top);
 }
 
 /**
