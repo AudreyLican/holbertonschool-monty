@@ -24,8 +24,7 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
  * @stack: stack where to push the element
  * @line_number: line where this push is called
  */
-void pint(__attribute__((unused)) stack_t **stack,
-__attribute__((unused)) unsigned int line_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
 	GlobalMonty *Monty = getGlobalMonty();
 
