@@ -19,7 +19,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	}
 	if (stack_height < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 
 		free_all_close_file(Monty->lineContent, stack, Monty->openFile);
 		exit(EXIT_FAILURE);
@@ -42,7 +42,7 @@ void add(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		free_all_close_file(Monty->lineContent, stack, Monty->openFile);
 		exit(EXIT_FAILURE);
 	}
