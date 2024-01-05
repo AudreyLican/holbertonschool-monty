@@ -27,5 +27,14 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
 void pint(__attribute__((unused)) stack_t **stack,
 __attribute__((unused)) unsigned int line_number)
 {
+	GlobalMonty *Monty = getGlobalMonty();
 
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+
+		free_all_close_file(Monty->lineContent, stack, Monty->openFile);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
 }
